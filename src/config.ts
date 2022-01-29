@@ -1,5 +1,5 @@
-import { dotenv } from "../deps/deno-dotenv.ts";
-import { generateKeyPair } from "./crypto.ts";
+import { config } from "../deps/deno-dotenv.ts";
+import { generateKeys } from "./crypto.ts";
 import { Logger } from "./logging.ts";
 
 const DOTENV_FILENAME = ".env";
@@ -27,7 +27,7 @@ export async function initConfig(logger: Logger): Promise<Config> {
     logger.info(msg);
   }
 
-  const env = dotenv.config();
+  const env = config();
   log(LOG_INIT_CONFIG);
 
   let fileNotFound = false;
@@ -53,7 +53,7 @@ export async function initConfig(logger: Logger): Promise<Config> {
   let privateKey, publicKey: string;
   if (!env.PRIVATEKEY_FILE || !env.PUBLICKEY_FILE) {
     log(LOG_MISSING_KEYS);
-    const keyPair = await generateKeyPair();
+    const keyPair = await generateKeys();
     privateKey = keyPair.privateKey;
     publicKey = keyPair.publicKey;
     await Deno.writeTextFile(PRIVATEKEY_FILENAME, privateKey);

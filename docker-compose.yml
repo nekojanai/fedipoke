@@ -5,6 +5,6 @@ services:
     image: fedipoke:latest
     build: .
     ports:
-      - "4040:4040"
+      - "1337:1337"
     volumes:
       - ./:/app

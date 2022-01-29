@@ -1,15 +1,21 @@
-import { log } from "../deps/log.ts";
-export type Logger = log.Logger;
+import {
+  Logger,
+  getLogger,
+  setup,
+  handlers,
+  LoggerConfig,
+} from "../deps/log.ts";
+export { Logger } from "../deps/log.ts";
 
-const loggerNames = ["config"];
+const loggerNames = ["config", "server"];
 
-const defaultLoggerConfig: log.LoggerConfig = {
+const defaultLoggerConfig: LoggerConfig = {
   level: "INFO",
   handlers: ["console"],
 };
 
 interface Loggers {
-  [name: string]: log.LoggerConfig;
+  [name: string]: LoggerConfig;
 }
 
 function createLoggers(names: string[]): Loggers {
@@ -20,17 +26,17 @@ function createLoggers(names: string[]): Loggers {
   return loggers;
 }
 
-function createLoggersMap(names: string[]): Map<string, log.Logger> {
-  const map = new Map<string, log.Logger>();
-  names.forEach((name) => map.set(name, log.getLogger(name)));
+function createLoggersMap(names: string[]): Map<string, Logger> {
+  const map = new Map<string, Logger>();
+  names.forEach((name) => map.set(name, getLogger(name)));
   return map;
 }
 
-export async function initLogging(): Promise<Map<string, log.Logger>> {
-  await log.setup({
+export async function initLogging(): Promise<Map<string, Logger>> {
+  await setup({
     handlers: {
-      console: new log.handlers.ConsoleHandler("INFO", {
-        formatter: "{datetime} {loggerName} {msg}",
+      console: new handlers.ConsoleHandler("INFO", {
+        formatter: "{datetime} [{loggerName}]: {msg}",
       }),
     },
     loggers: createLoggers(loggerNames),

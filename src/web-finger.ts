@@ -1,3 +1,5 @@
+export const webFingerRoute = "/.well-known/well-known";
+
 export interface WebFingerLink {
   rel: string;
   type: string;
@@ -20,6 +22,6 @@ export function newWebfingerLink(href: string): WebFingerLink {
 export function newWebfinger(username: string, domain: string): WebFinger {
   return {
     subject: `acct:${username}@${domain}}`,
-    links: [newWebfingerLink(`https://${domain}/api/v1/users/${username}`)],
+    links: [newWebfingerLink(createUserApiUrl(domain, username))],
   };
 }
