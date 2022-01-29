@@ -1,9 +1,11 @@
-# fedipoke
-[fedipoke](fedipoke.png)
+<p align="center"><img src="fedipoke.png" /></p>  
+
+# fedipoke  
 a federated poking/booping service  
+  
 *@nekojanai boops @absturztaube*
 
-# config
+## config
 the application will create a `.env` file in its root directory which you need to fill out or you can provide one yourself  
 example `.env` file
 ```
