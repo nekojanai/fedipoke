@@ -1,5 +1,7 @@
 # fedipoke
-a federated poking service
+[fedipoke](fedipoke.png)
+a federated poking/booping service  
+*@nekojanai boops @absturztaube*
 
 # config
 the application will create a `.env` file in its root directory which you need to fill out or you can provide one yourself  
