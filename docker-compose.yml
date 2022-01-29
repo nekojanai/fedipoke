@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  fedipoke-dev:
+    image: fedipoke:latest
+    build: .
+    ports:
+      - "4040:4040"
+    volumes:
+      - ./:/app

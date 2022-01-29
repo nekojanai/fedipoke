@@ -1,12 +1,9 @@
-ARG DENO_IMAGE_VERSION=alpine-1.16.0
+ARG DENO_IMAGE_VERSION=alpine-1.18.0
 
 FROM denoland/deno:${DENO_IMAGE_VERSION} 
-RUN deno install -qAf --unstable https://deno.land/x/denon/denon.ts
 
 RUN mkdir /app
 WORKDIR /app
-RUN mkdir src
-COPY ./scripts.json ./
-VOLUME [ "/app/src" ]
+VOLUME [ "/app" ]
 
-CMD [ "denon", "start" ]
+CMD [ "deno", "run", "--watch", "--allow-read", "--allow-write", "./src/main.ts" ]
