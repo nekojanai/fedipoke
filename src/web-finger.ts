@@ -1,3 +1,5 @@
+import { createUserApiUrl } from "./utils.ts";
+
 export const webFingerRoute = "/.well-known/well-known";
 
 export interface WebFingerLink {

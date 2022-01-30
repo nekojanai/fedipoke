@@ -36,6 +36,7 @@ export async function initLogging(): Promise<Map<string, Logger>> {
   await setup({
     handlers: {
       console: new handlers.ConsoleHandler("INFO", {
+        // TODO: firgure out how to format `datetime`
         formatter: "{datetime} [{loggerName}]: {msg}",
       }),
     },
