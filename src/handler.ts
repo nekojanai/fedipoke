@@ -3,7 +3,8 @@ import { ParameterContext } from "../deps/brotoroutus.ts";
 import { MiddlewareContext, runMiddlewarePipeline } from "../deps/waggon.ts";
 import { body, html, pipe, toResponse } from "../deps/please-respond.ts";
 import staticFiles from "../deps/static-files.ts";
-import { rootHtml } from "./pages/index.tsx";
+import { renderPage } from "./ssr.ts";
+import { index, pokePerson } from "./pages/index.tsx";
 
 interface RouteContext extends MiddlewareContext, ParameterContext {}
 
@@ -29,8 +30,8 @@ export function handleRouteHandlerPipeline(
 }
 
 export const handlers: Handlers = {
-  root: () => toResponse(pipe([html, body(rootHtml)])),
-  hello: (req, conn, ctx) => new Response(`hello ${ctx?.parameters.name}`),
+  root: () => toResponse(pipe([html, body(renderPage(index()))])),
+  hello: (req, conn, ctx) => toResponse(pipe([html, body(renderPage(pokePerson(ctx?.parameters.name)))])),
   public: (req) => {
     return staticFiles("public")({
       request: req,
