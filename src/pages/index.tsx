@@ -1,13 +1,16 @@
-const x = "aaaaaaaaaaaaaaaaaaaa";
+import {React, Helmet} from "../../deps/react.ts";
 
-export const rootHtml = `
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <h1>${x}</h1>
-  </body>
-</html>`
+const Index = ({name}: {name: string}) => <React.Fragment>
+  <Helmet>
+    <title>FediPoke 👉</title>
+  </Helmet>
+  <h1>Poke {name}</h1>
+</React.Fragment>
+
+export function index() {
+  return <Index name="People"></Index> 
+}
+
+export function pokePerson(name: string="") {
+  return <Index name={name}></Index> 
+}
