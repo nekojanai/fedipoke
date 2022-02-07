@@ -1,16 +1,16 @@
-import {React, Helmet} from "../../deps/react.ts";
+import { React, Helmet } from "../../deps/react.ts";
+import { LoginForm } from "../components/login-form.tsx";
 
-const Index = ({name}: {name: string}) => <React.Fragment>
+const Index = () => <React.Fragment>
   <Helmet>
-    <title>FediPoke 👉</title>
+    <title>Fedipoke</title>
   </Helmet>
-  <h1>Poke {name}</h1>
-</React.Fragment>
+  <img src="/public/images/fedipoke.png"></img>
+  <h1>Fedipoke</h1>
+  <p>A federated poking service.</p>
+  <LoginForm />
+</React.Fragment>;
 
 export function index() {
-  return <Index name="People"></Index> 
-}
-
-export function pokePerson(name: string="") {
-  return <Index name={name}></Index> 
+  return <Index />; 
 }

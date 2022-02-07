@@ -1,0 +1,12 @@
+@import url(./normalize.css);
+@import url(./variables.css);
+/* component styles */
+@import url(./components/);
+
+body {
+  background-color: var(--color-light);
+  color: var(--color-secondary);
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-default);
+  font-weight: 400;
+}

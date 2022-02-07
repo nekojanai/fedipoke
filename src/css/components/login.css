@@ -1,0 +1,12 @@
+.form {
+  border: 1px dotted black;
+  display: flex;
+  flex-direction: column;
+}
+.form__input {
+  max-width: 10rem;
+}
+.form__hint {
+  font-style: italic;
+  font-size: 0.8rem;
+}

@@ -1,3 +1,4 @@
+.DS_STORE
 .env
 publickey.txt
 privatekey.txt

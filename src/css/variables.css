@@ -1,0 +1,11 @@
+:root {
+  /* colors */
+  --color-light: #cdcbd6;
+  --color-accent: #d96846;
+  --color-primary: #596235;
+  --color-secondary: #2f3020;
+
+  /* fonts */
+  --font-family-default: Helvetica, sans-serif;
+  --font-size-default: 16px;
+}

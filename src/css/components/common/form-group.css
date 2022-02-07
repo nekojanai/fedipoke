@@ -1,0 +1,13 @@
+.form__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__group__input {
+  max-width: 10rem;
+}
+
+.form__group__hint {
+  font-style: italic;
+  font-size: 0.8rem;
+}
