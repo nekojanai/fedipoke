@@ -1,4 +1,4 @@
-import { ReactDom, Helmet } from "../deps/react.ts";
+import { ReactDom, Helmet } from "../deps.ts";
 
 export function renderComponent(element: JSX.Element) {
   return ReactDom.renderToString(element);

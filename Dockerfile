@@ -6,4 +6,4 @@ RUN mkdir /app
 WORKDIR /app
 VOLUME [ "/app" ]
 
-CMD [ "deno", "run", "--watch", "--allow-read", "--allow-write", "--allow-net", "--config", "deno.json", "./src/main.ts" ]
+CMD [ "deno", "run", "--watch", "--allow-read", "--allow-write", "--allow-net", "--config", "deno.json", "./main.ts" ]

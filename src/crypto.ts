@@ -1,4 +1,4 @@
-import { exportPKCS8, exportSPKI, generateKeyPair } from "../deps/jose.ts";
+import { exportPKCS8, exportSPKI, generateKeyPair } from "../deps.ts";
 
 export interface KeyPair {
   publicKey: string;

@@ -1,6 +1,6 @@
-import { initConfig } from "./config.ts";
-import { initLogging } from "./logging.ts";
-import { initServer } from "./server.ts";
+import { initConfig } from "./src/config.ts";
+import { initLogging } from "./src/logging.ts";
+import { initServer } from "./src/server.ts";
 
 const loggers = await initLogging();
 const config = await initConfig(loggers.get("config")!);

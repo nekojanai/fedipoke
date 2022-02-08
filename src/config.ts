@@ -1,4 +1,4 @@
-import { config } from "../deps/deno-dotenv.ts";
+import { config } from "../deps.ts";
 import { generateKeys } from "./crypto.ts";
 import { Logger } from "./logging.ts";
 

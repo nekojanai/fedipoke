@@ -1,5 +1,4 @@
-import { serve } from "../deps/server.ts";
-import { handleMiddlewarePipeline, MiddlewareHandler } from "../deps/waggon.ts";
+import { handleMiddlewarePipeline, MiddlewareHandler, serve } from "../deps.ts";
 import { Config } from "./config.ts";
 import { Logger } from "./logging.ts";
 import { router } from "./router.ts";

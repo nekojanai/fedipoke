@@ -4,8 +4,8 @@ import {
   setup,
   handlers,
   LoggerConfig,
-} from "../deps/log.ts";
-export { Logger } from "../deps/log.ts";
+} from "../deps.ts";
+export { Logger } from "../deps.ts";
 
 const loggerNames = ["config", "server"];
 

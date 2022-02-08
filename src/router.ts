@@ -1,4 +1,4 @@
-import { Route as BrontoRoute, Router } from "../deps/brotoroutus.ts";
+import { Route as BrontoRoute, Router } from "../deps.ts";
 import { handlers } from "./handler.ts";
 
 export const router = new Router();

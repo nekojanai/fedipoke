@@ -1,10 +1,11 @@
-import { ConnInfo } from "../deps/server.ts";
-import { ParameterContext } from "../deps/brotoroutus.ts";
-import { MiddlewareContext } from "../deps/waggon.ts";
-import { body, html, pipe, toResponse } from "../deps/please-respond.ts";
+import { ConnInfo } from "../deps.ts";
+import { ParameterContext } from "../deps.ts";
+import { MiddlewareContext } from "../deps.ts";
+import { body, html, pipe, toResponse } from "../deps.ts";
+import { serveFile } from "../deps.ts";
+
 import { renderPage } from "./ssr.ts";
 import { index } from "./pages/index.tsx";
-import { serveFile } from "../deps/staticsaurus.ts";
 
 interface RouteContext extends MiddlewareContext, ParameterContext {}
 
