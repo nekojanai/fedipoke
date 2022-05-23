@@ -1,7 +1,7 @@
 @import url(./normalize.css);
 @import url(./variables.css);
 /* component styles */
-@import url(./components/);
+@import url(./components/index.css);
 
 body {
   background-color: var(--color-light);
@@ -9,4 +9,20 @@ body {
   font-family: var(--font-family-default);
   font-size: var(--font-size-default);
   font-weight: 400;
+  padding: 1rem;
+}
+.header {
+  margin-bottom: 1rem;
+}
+.header__brand {
+  display: flex;
+}
+.logo {
+  max-width: 50px;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 2rem;
 }

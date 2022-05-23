@@ -1,3 +1,5 @@
 .form {
   border: 0.2rem dotted black;
+  padding: 1rem;
+  max-width: 500px;
 }

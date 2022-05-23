@@ -21,5 +21,12 @@ interface Handlers {
 
 export const handlers: Handlers = {
   root: () => toResponse(pipe([html, body(renderPage(index()))])),
-  public: (req, conn, ctx) => serveFile(req),
+  css: (req) => serveFile(req, {
+    servePath: "./src/css/",
+    allowedExtensions: [".css"]
+  }),
+  images: (req) => serveFile(req, {
+    servePath: "./src/images/",
+    allowedExtensions: [".jpg",".png",".svg"]
+  }),
 };

@@ -7,7 +7,8 @@ type Route = Omit<BrontoRoute, "pattern">;
 
 const routes: Route[] = [
   { path: "/", method: "GET", handler: handlers.root },
-  { path: "/public/*", method: "GET", handler: handlers.public },
+  { path: "/css/*", method: "GET", handler: handlers.css },
+  { path: "/images/*", method: "GET", handler: handlers.images }
 ];
 
 routes.forEach((route) =>

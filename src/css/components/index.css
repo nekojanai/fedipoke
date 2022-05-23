@@ -1,3 +1,5 @@
 /* common */
-@import url(./common/);
-/* 
+@import url(./common/index.css);
+
+/* components */
+@import url(./login.css);
